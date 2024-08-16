@@ -21,3 +21,36 @@
       apt:
         name: wireshark
         state: latest
+
+
+- name: create directory, file and set timezone on all servers
+
+  Host: wevservers, nfs, db, lb
+  
+  Become: Yes
+
+     Task: 
+
+     -name: create a directory
+
+     file:
+     
+     Path: /home/sample
+
+     State: directory
+
+      - Name: create a file
+
+  file: 
+
+      Path: /home/sample/ansible.txt
+
+      state: touch
+
+     Name: set timezone
+
+    Timezone:
+
+     Name: Africa Lagos
+
+
