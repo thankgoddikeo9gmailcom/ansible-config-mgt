@@ -4,3 +4,5 @@ Ansible
 TEXT
 
 TEST
+
+ansible-config-artifact
